@@ -123,6 +123,8 @@ def cast_vote():
             break
     return jsonify({"message": "Vote secured in Blockchain"}), 200
 
-if __name__ == '__main__':
-    # host='0.0.0.0' मुळे नेटवर्कमधील इतर डिव्हाइसेसना तुमचा सर्व्हर दिसेल
-    app.run(debug=True, host='0.0.0.0', port=5000)
+import os # ही ओळ सर्वात वर नसेल तर ॲड करा
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host='0.0.0.0', port=port)

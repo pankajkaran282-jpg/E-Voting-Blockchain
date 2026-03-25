@@ -111,7 +111,7 @@ def cast_vote():
 
     # BLOCKCHAIN VALIDATION (One Voter One Vote)
     if blockchain.has_voted(phone):
-        return jsonify({"error": "Already Voted! Ya mobile number varun matdaan jhale aahe."}), 403
+        return jsonify({"error": "Already Voted! "}), 403
 
     blockchain.add_transaction(phone, c_id)
     prev_hash = blockchain.hash(blockchain.last_block())
